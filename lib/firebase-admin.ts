@@ -1,4 +1,4 @@
-import * as admin from "firebase-admin"
+import * as admin from "firebase-admin";
 
 // Check if Firebase app is already initialized
 if (!admin.apps.length) {
@@ -10,13 +10,12 @@ if (!admin.apps.length) {
       privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
     }),
     databaseURL: `https://${process.env.FIREBASE_PROJECT_ID}.firebaseio.com`,
-  })
+  });
 }
 
 // Export Firebase admin services
-export const db = admin.firestore()
-export const auth = admin.auth()
-export const messaging = admin.messaging()
+export const db = admin.firestore();
+export const auth = admin.auth();
+export const messaging = admin.messaging();
 
-export default admin
-
+export default admin;
